@@ -16,6 +16,11 @@
   -webkit-text-fill-color: transparent;
 }
 
+.heroTitle {
+  @apply font-light;
+  transform: translateY(100vh);
+}
+
 .heroLine {
   @apply h-1 bg-black inline-block w-0 scale-0 md:h-1.5 lg:h-2;
 

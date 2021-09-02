@@ -29,7 +29,9 @@ export const HeroContent: React.FC<HeroContentProps> = ({
       )}
       {...rest}
     >
-      <h2 className={clsx('font-light', SWIPER_SELECTORS.heroTitle.className)}>
+      <h2
+        className={clsx(styles.heroTitle, SWIPER_SELECTORS.heroTitle.className)}
+      >
         <div
           className={clsx(
             'flex items-center justify-between',

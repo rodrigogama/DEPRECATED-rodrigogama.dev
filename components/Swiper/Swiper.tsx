@@ -18,12 +18,17 @@ export const SwiperSlides: React.FC<Swiper> = ({
 
   const handleOnSwiper = (swiper: SwiperClass) => {
     swiperRef.current = swiper;
-    init(swiper);
   };
 
   const handleSlideProgress = (swiper: SwiperClass, progress: number) => {
     animateOnProgress(progress);
   };
+
+  React.useEffect(() => {
+    if (swiperRef.current) {
+      init(swiperRef.current);
+    }
+  }, [init]);
 
   return (
     <Swiper
