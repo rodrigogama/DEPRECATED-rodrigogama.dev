@@ -68,8 +68,6 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
 
       const scrollProgress = progress * sliderPosition;
 
-      console.log(isLinesReady.current, scrollProgress);
-
       if (isLinesReady.current && scrollProgress >= 0 && scrollProgress < 1) {
         moveLines(scrollProgress);
       }
