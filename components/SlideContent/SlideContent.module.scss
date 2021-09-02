@@ -1,0 +1,27 @@
+.slideContainer {
+  @apply px-0 py-8 relative flex flex-col items-start justify-start lg:flex-row lg:justify-between;
+}
+
+.topBorder {
+  @apply border-t border-solid border-black;
+}
+
+.introHeading {
+  @apply text-2xl leading-tight font-normal m-0 lg:text-3xl lg:leading-tight;
+}
+
+.article {
+  @apply w-full lg:w-1/2;
+}
+
+.skillsParagraph {
+  @apply font-normal leading-tight pt-8;
+}
+
+.skillBordered {
+  @apply pb-1 leading-normal border border-solid border-black;
+}
+
+.quote {
+  @apply pt-16 italic text-base leading-tight font-light lg:pt-32 lg:text-lg;
+}

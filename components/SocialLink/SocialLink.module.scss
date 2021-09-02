@@ -1,0 +1,16 @@
+.link {
+  @apply leading-normal font-normal text-black py-2 m-0 no-underline block border-t border-solid border-black text-xl lg:w-1/2 lg:text-2xl;
+
+  transition: background-color 150ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: theme('colors.black');
+    color: theme('colors.white');
+  }
+}
+
+.stroke {
+  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-fill-color: transparent;
+}

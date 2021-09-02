@@ -1,0 +1,47 @@
+.heroContainer {
+  font-size: 6vw;
+  line-height: 1.13;
+
+  @screen lg {
+    @apply text-8xl;
+  }
+
+  @screen xl {
+    @apply text-9xl;
+  }
+}
+
+.heroContainerStroke {
+  -webkit-text-stroke: 1px theme('colors.black');
+  -webkit-text-fill-color: transparent;
+}
+
+.heroLine {
+  @apply h-1 bg-black inline-block w-0 scale-0 md:h-1.5 lg:h-2;
+
+  margin-top: 0.12em;
+  transform-origin: 0 50%;
+}
+
+.heroLineInverted {
+  transform-origin: 100% 50%;
+}
+
+.heroText {
+  @apply whitespace-nowrap flex items-center mr-auto;
+}
+
+.heroImage {
+  @apply relative flex-shrink-0 ml-4;
+
+  width: 12vw;
+  height: 12vw;
+
+  @screen lg {
+    @apply h-32 w-32;
+  }
+
+  @screen xl {
+    @apply h-36 w-36;
+  }
+}
