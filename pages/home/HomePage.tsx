@@ -8,14 +8,12 @@ SwiperCore.use([Scrollbar, Mousewheel]);
 
 const HomePage: NextPage = () => {
   return (
-    <div className="h-screen overflow-hidden relative z-10">
-      <main className="h-screen">
-        <div className="h-full swiper-container">
-          <SwiperSlides />
-        </div>
-        <SwiperScrollbar />
-      </main>
-    </div>
+    <main className="fixed h-full">
+      <div className="h-full swiper-container">
+        <SwiperSlides />
+      </div>
+      <SwiperScrollbar />
+    </main>
   );
 };
 
