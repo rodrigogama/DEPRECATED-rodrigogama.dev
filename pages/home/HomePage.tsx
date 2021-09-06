@@ -8,11 +8,11 @@ SwiperCore.use([Scrollbar, Mousewheel]);
 
 const HomePage: NextPage = () => {
   return (
-    <main className="fixed h-full">
-      <div className="h-full swiper-container">
+    <main className="fixed h-full w-full">
+      <div className="h-full swiper-container relative max-w-8xl">
         <SwiperSlides />
+        <SwiperScrollbar />
       </div>
-      <SwiperScrollbar />
     </main>
   );
 };
