@@ -135,8 +135,10 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
     const scrollbarHeight =
       getElementHeight(scrollbarEl) / getElementHeight(scrollbarDragEl);
 
-    const linesTl = animateLines();
+    // const linesTl = animateLines();
     const scrollbarTl = gsap.timeline();
+
+    console.log({ scrollbarHeight });
 
     scrollbarTl
       .set(scrollbarDragEl, {
@@ -177,7 +179,7 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
             setLinesWidth();
           },
           onComplete: () => {
-            linesTl.play();
+            // linesTl.play();
           },
         },
         '-=1.5',
@@ -194,7 +196,7 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
           opacity: 1,
         },
       );
-  }, [animateLines, setLinesWidth]);
+  }, [setLinesWidth]);
 
   const init = React.useCallback<InitFunction>(
     swiper => {
