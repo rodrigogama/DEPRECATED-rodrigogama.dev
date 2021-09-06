@@ -1,9 +1,5 @@
 .swiper {
   @apply h-full z-10 relative mx-auto my-0 pt-10 pb-5 pr-8 w-full max-w-8xl lg:px-0 lg:py-30;
-
-  & [class~='swiper-wrapper'] {
-    height: auto !important;
-  }
 }
 
 .scrollbar {
@@ -13,7 +9,7 @@
   transform-origin: 50% 100%;
   transform: translate(0, -50%);
   width: 9px;
-  height: 75vh;
+  height: 75vh !important;
   top: 50%;
   right: 20px;
 
