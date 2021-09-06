@@ -92,7 +92,7 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
     return tl
       .to(lines, { duration: 1, scaleX: 1, ease: 'expo.inOut' })
       .to(texts, { duration: 1, x: 0, ease: 'expo.inOut' }, '-=1');
-  }, []);
+  }, [animateOnProgress]);
 
   const setLinesWidth = React.useCallback(() => {
     isLinesReady.current = false;
