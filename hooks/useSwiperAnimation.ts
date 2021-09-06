@@ -80,7 +80,7 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
       paused: true,
       onComplete: () => {
         isLinesReady.current = true;
-        // tl.kill();
+        tl.kill();
         console.log(swiperRef.current?.progress ?? 'sem progress');
         animateOnProgress(swiperRef.current?.progress ?? 0);
       },
@@ -121,25 +121,23 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
   }, []);
 
   const animateScrollbar = React.useCallback<AnimateScrollbarFunction>(() => {
-    console.log(swiperRef.current?.scrollbar.el);
-    console.log(document.querySelector(SWIPER_SELECTORS.scrollbar.selector));
-
     if (!swiperRef.current)
       throw new Error('SwiperRef null on animateScrollbar');
 
-    console.log('passou');
-
-    const { selector: scrollbarSelector } = SWIPER_SELECTORS.scrollbar;
     const { selector: scrollbarDragSelector } = SWIPER_SELECTORS.scrollbarDrag;
-    const scrollbarEl = document.querySelector(scrollbarSelector);
     const scrollbarDragEl = document.querySelector(scrollbarDragSelector);
+    const scrollbarEl = swiperRef.current.scrollbar.el;
     const scrollbarHeight =
       getElementHeight(scrollbarEl) / getElementHeight(scrollbarDragEl);
 
     const linesTl = animateLines();
     const scrollbarTl = gsap.timeline();
 
+    console.log(scrollbarEl);
+    console.log(scrollbarDragEl);
     console.log({ scrollbarHeight });
+    console.log(getElementHeight(scrollbarEl));
+    console.log(getElementHeight(scrollbarDragEl));
 
     scrollbarTl
       .set(scrollbarDragEl, {
