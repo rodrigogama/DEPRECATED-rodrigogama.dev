@@ -133,12 +133,6 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
     const linesTl = animateLines();
     const scrollbarTl = gsap.timeline();
 
-    console.log(scrollbarEl);
-    console.log(scrollbarDragEl);
-    console.log({ scrollbarHeight });
-    console.log(getElementHeight(scrollbarEl));
-    console.log(getElementHeight(scrollbarDragEl));
-
     scrollbarTl
       .set(scrollbarDragEl, {
         scaleY: scrollbarHeight,
