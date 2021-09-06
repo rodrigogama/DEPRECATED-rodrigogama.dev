@@ -133,8 +133,10 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
     const linesTl = animateLines();
     const scrollbarTl = gsap.timeline();
 
+    console.log({ scrollbarHeight });
+
     scrollbarTl
-      .set(scrollbarDragEl, {
+      .set(scrollbarDragSelector, {
         scaleY: scrollbarHeight,
       })
       .fromTo(
@@ -150,7 +152,7 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
         },
       )
       .fromTo(
-        scrollbarDragEl,
+        scrollbarDragSelector,
         { scaleY: scrollbarHeight, duration: 1.5 },
         {
           scaleY: 1,
