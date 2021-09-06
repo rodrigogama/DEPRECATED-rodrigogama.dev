@@ -80,7 +80,8 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
       paused: true,
       onComplete: () => {
         isLinesReady.current = true;
-        tl.kill();
+        // tl.kill();
+        console.log(swiperRef.current?.progress ?? 'sem progress');
         animateOnProgress(swiperRef.current?.progress ?? 0);
       },
     });
@@ -91,7 +92,7 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
     return tl
       .to(lines, { duration: 1, scaleX: 1, ease: 'expo.inOut' })
       .to(texts, { duration: 1, x: 0, ease: 'expo.inOut' }, '-=1');
-  }, [animateOnProgress]);
+  }, []);
 
   const setLinesWidth = React.useCallback(() => {
     isLinesReady.current = false;
@@ -135,7 +136,7 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
     const scrollbarHeight =
       getElementHeight(scrollbarEl) / getElementHeight(scrollbarDragEl);
 
-    // const linesTl = animateLines();
+    const linesTl = animateLines();
     const scrollbarTl = gsap.timeline();
 
     console.log({ scrollbarHeight });
@@ -179,7 +180,7 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
             setLinesWidth();
           },
           onComplete: () => {
-            // linesTl.play();
+            linesTl.play();
           },
         },
         '-=1.5',
@@ -196,7 +197,7 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
           opacity: 1,
         },
       );
-  }, [setLinesWidth]);
+  }, [animateLines, setLinesWidth]);
 
   const init = React.useCallback<InitFunction>(
     swiper => {
