@@ -7,5 +7,7 @@ export const getElementWidth = (el: DOMElement) => {
 
 export const getElementHeight = (el: DOMElement) => {
   if (!el) return 0;
+  console.log('getComputedStyle');
+  console.log(getComputedStyle(el, null));
   return parseFloat(getComputedStyle(el, null).height.replace('px', ''));
 };
