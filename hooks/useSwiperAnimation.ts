@@ -120,10 +120,17 @@ const useSwiperAnimation = (): IUseSwiperAnimation => {
   }, []);
 
   const animateScrollbar = React.useCallback<AnimateScrollbarFunction>(() => {
-    if (!swiperRef.current) return;
+    console.log(swiperRef.current?.scrollbar.el);
+    console.log(document.querySelector(SWIPER_SELECTORS.scrollbar.selector));
 
+    if (!swiperRef.current)
+      throw new Error('SwiperRef null on animateScrollbar');
+
+    console.log('passou');
+
+    const { selector: scrollbarSelector } = SWIPER_SELECTORS.scrollbar;
     const { selector: scrollbarDragSelector } = SWIPER_SELECTORS.scrollbarDrag;
-    const scrollbarEl = swiperRef.current.scrollbar.el;
+    const scrollbarEl = document.querySelector(scrollbarSelector);
     const scrollbarDragEl = document.querySelector(scrollbarDragSelector);
     const scrollbarHeight =
       getElementHeight(scrollbarEl) / getElementHeight(scrollbarDragEl);
