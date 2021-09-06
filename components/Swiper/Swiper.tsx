@@ -26,9 +26,10 @@ export const SwiperSlides: React.FC<Swiper> = ({
   };
 
   React.useEffect(() => {
-    if (!swiperRef.current) throw new Error('SwiperRef null on useEffect');
-
-    init(swiperRef.current);
+    setTimeout(() => {
+      if (!swiperRef.current) throw new Error('SwiperRef null on useEffect');
+      init(swiperRef.current);
+    }, 100);
   }, [init]);
 
   return (
