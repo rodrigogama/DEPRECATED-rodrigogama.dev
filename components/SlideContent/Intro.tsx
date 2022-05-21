@@ -27,12 +27,12 @@ export const Intro: React.FC<HTMLAttributes<HTMLDivElement>> = () => {
         <h3 className={clsx(styles.introHeading, 'pt-8')}>
           Currently I&apos;m building interesting stuff at{' '}
           <a
-            href="https://br.addi.com/"
+            href="https://personio.com/"
             className="underline hover:text-orange-600 transition-colors"
             target="_blank"
             rel="noreferrer"
           >
-            ADDI Brasil
+            Personio
           </a>{' '}
           and sharing knowledge online.
         </h3>
